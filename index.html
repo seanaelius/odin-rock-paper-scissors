@@ -56,25 +56,46 @@
         }
 
         function game() {
+            //Define W/L counters (needs to be global)
+            let wins = 0;
+            let loss = 0;
+            //For loop runs playround 5x
+            //For loop runs user prompt 5x
+            //For loop runs computer choice function 5x
             for (let i = 0; i < 5; i++) {
                 //Define parameters
                 const computerSelection = getComputerChoice()
                 let playerSelection = prompt("What would you like to play this turn? Rock, Paper or Scissors?")
                 //Make playerSelection case-insensitive (Use .toLowerCase())
                 playerSelection = playerSelection.toLowerCase()
-                //Display Results of the game using console log
-                console.log(playRound(playerSelection, computerSelection))
-                //Define W/L counter (needs to be global)
-                //Define result variable
-                //Check 4th Letter of output
+                //Display Results of the round using console log
+                let round;
+                round = playRound(playerSelection, computerSelection);
+                console.log(round)
+                //Define result variable to record 4th letter of output
+                let result = round.slice(4, 5);
                 //If result = W, add one to W counter
-                //If result = T, add one to W and L counter
-                //If result = L, add one to L counter
-                //At the end compare W and L counters
-                //If W > L, player wins
+                if (result === "W") {
+                    wins = wins + 1;
+                    //If result = L, add one to L counter
+                } else if (result === "L") {
+                    loss = loss + 1;
+                    //If result = T, add one to W and L counter
+                } else if (result === "T") {
+                    wins = wins + 1;
+                    loss = loss + 1;
+                }
+            }
+            //At the end compare W and L counters
+            //If W > L, player wins
+            if (wins > loss) {
+                return "Player Wins!"
+            } else if (wins < loss) {
                 //If W < L, computer wins
+                return "Computer Wins!"
                 //If W == L, tie!
-                //Tie breaker?
+            } else if (wins === loss) {
+                return "Player ties with the computer!"
             }
         }
     </script>
