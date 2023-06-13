@@ -10,7 +10,8 @@
 
 <body>
     <script>
-
+        //Request name from user
+        let name = prompt("What is your name?");
         //Create a function called getComputerChoice
         function getComputerChoice() {
             //Function will randomly return rock, paper, scissors
@@ -89,13 +90,13 @@
             //At the end compare W and L counters
             //If W > L, player wins
             if (wins > loss) {
-                return "Player Wins!"
+                return `${name} wins the game!`
             } else if (wins < loss) {
                 //If W < L, computer wins
-                return "Computer Wins!"
+                return "The Computer wins the game!"
                 //If W == L, tie!
             } else if (wins === loss) {
-                return "Player ties with the computer!"
+                return `${name} ties with The Computer!`
             }
         }
     </script>
