@@ -15,9 +15,18 @@
         function getComputerChoice() {
             //Function will randomly return rock, paper, scissors
             //Get a random number from 0-2
+            let choice = Math.floor(Math.random() * 3)
             //If number = 0, get rock
-            //If number = 1, get paper
-            //If number = 2, get scissors
+            if (choice == 0) {
+                return "Rock";
+                //If number = 1, get paper
+            } else if (choice == 1) {
+                return "Paper";
+                //If number = 2, get scissors
+            } else {
+                return "Scissors";
+            }
+
         }
 
 
