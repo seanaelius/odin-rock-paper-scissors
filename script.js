@@ -29,21 +29,12 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "You tie with the computer!"
         //Win cases! (rock beats scissors, paper beats rock, scissors beats paper)
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "You Win! Rock beats Scissors!"
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "You Win! Paper beats Rock!"
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return "You Win! Scissors beats Paper!"
+    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
+        return `You Win! ${playerSelection} beats ${computerSelection}!`
         //Lose cases! (reverse of win cases)
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return "You Lose! Rock beats Scissors!"
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        return "You Lose! Paper beats Rock!"
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "You Lose! Scissors beats Paper!"
+    } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
+        return `You Lose! ${computerSelection} beats ${playerSelection}!`
     }
-    //Example: "You Lose! Paper beats Rock"
 }
 
 function game() {
