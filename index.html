@@ -80,28 +80,23 @@
                 let result = round.slice(4, 5);
                 //If result = W, add one to W counter
                 if (result === "W") {
-                    wins = wins + 1;
+                    wins += 1;
                     //If result = L, add one to L counter
                 } else if (result === "L") {
-                    loss = loss + 1;
-                    //If result = T, add one to W and L counter
-                } else if (result === "T") {
-                    wins = wins + 1;
-                    loss = loss + 1;
+                    loss += 1;
+                }
+                //At the end compare W and L counters
+                //If W > L, player wins
+                if (wins > loss) {
+                    return `${name} wins the game!`
+                } else if (wins < loss) {
+                    //If W < L, computer wins
+                    return "The Computer wins the game!"
+                    //If W == L, tie!
+                } else if (wins === loss) {
+                    return `${name} ties with The Computer!`
                 }
             }
-            //At the end compare W and L counters
-            //If W > L, player wins
-            if (wins > loss) {
-                return `${name} wins the game!`
-            } else if (wins < loss) {
-                //If W < L, computer wins
-                return "The Computer wins the game!"
-                //If W == L, tie!
-            } else if (wins === loss) {
-                return `${name} ties with The Computer!`
-            }
-        }
     </script>
 </body>
 
