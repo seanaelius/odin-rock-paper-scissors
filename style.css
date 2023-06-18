@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid black;
+    padding: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: center;
+}
