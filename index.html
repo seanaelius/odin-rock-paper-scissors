@@ -60,13 +60,11 @@
         }
 
         function game() {
-            //Define W/L counters (needs to be global)
+            //Define W/L counters
             let wins = 0;
             let loss = 0;
-            //For loop runs playround 5x
-            //For loop runs user prompt 5x
-            //For loop runs computer choice function 5x
-            for (let i = 0; i < 5; i++) {
+            //While loop continues game until either wins or losses reaches 5 first
+            while (wins < 5 & loss < 5) {
                 //Define parameters
                 const computerSelection = getComputerChoice()
                 let playerSelection = prompt("What would you like to play this turn? Rock, Paper or Scissors?")
