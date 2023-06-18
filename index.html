@@ -85,18 +85,16 @@
                 } else if (result === "L") {
                     loss += 1;
                 }
-                //At the end compare W and L counters
-                //If W > L, player wins
-                if (wins > loss) {
-                    return `${name} wins the game!`
-                } else if (wins < loss) {
-                    //If W < L, computer wins
-                    return "The Computer wins the game!"
-                    //If W == L, tie!
-                } else if (wins === loss) {
-                    return `${name} ties with The Computer!`
-                }
             }
+            //At the end compare W and L counters
+            //If W > L, player wins
+            if (wins > loss) {
+                return `${name} wins the game!`
+            } else if (wins < loss) {
+                //If W < L, computer wins
+                return "The Computer wins the game!"
+            }
+        }
     </script>
 </body>
 
