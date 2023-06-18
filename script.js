@@ -35,6 +35,7 @@ function playRound(playerSelection, computerSelection) {
     } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
         return `You Lose! ${computerSelection} beats ${playerSelection}!`
     }
+    //I want to implement a different system to detect a win as opposed to the string slicing
 }
 
 function game() {
@@ -70,4 +71,8 @@ function game() {
         //If W < L, computer wins
         return "The Computer wins the game!"
     }
+
+    //Addeventlistener for buttons
+    //Implement getPlayerChoice() function in here
+    //Append scoreboard with scoreboard layout and append each score with a value representing their wins
 }
