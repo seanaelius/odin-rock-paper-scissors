@@ -1,7 +1,5 @@
 //Request name from user
 let name = prompt("What is your name?");
-//Alert for Instructions!
-alert("Please enter \"game()\" in the console log to play Rock Paper Scissors!")
 //Create a function called getComputerChoice
 function getComputerChoice() {
     //Function will randomly return rock, paper, scissors
@@ -55,6 +53,7 @@ function game() {
         console.log(round)
         //Define result variable to record 4th letter of output
         let result = round.slice(4, 5);
+        console.log(result)
         //If result = W, add one to W counter
         if (result === "W") {
             wins += 1;
@@ -75,4 +74,12 @@ function game() {
     //Addeventlistener for buttons
     //Implement getPlayerChoice() function in here
     //Append scoreboard with scoreboard layout and append each score with a value representing their wins
+    //PRESS BUTTON
+    //ROUND START
+    //CHOOSE ROCK, PAPER, OR SCISSORS
+    //ROUND END
+    //PLAYER/COMPUTER WINS THE ROUND!
+    //SCOREBOARD UPDATE
+    //GAME END
+    //PLAYER BEATS COMPUTER WITH A SCORE OF 5-X!
 }

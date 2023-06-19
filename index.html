@@ -15,13 +15,20 @@
         <h1 class="title">Rock Paper Scissors!</h1>
     </header>
     <main>
-        <button class="play">Click here to play Rock Paper Scissors!</button>
+        <button class="play">Click here to play Rock Paper Scissors!</button> <!--PRESS BUTTON ROUND STARTS-->
         <div class="choices">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissors">Scissors</button>
         </div>
-        <div class="scoreboard"></div>
+        <div class="game-status">Game not in Progress</div>
+        <!--When Game starts: Game in progress
+            When Game ends: Game results (PLAYER BEATS COMPUTER WITH SCORE OF 5-X)-->
+        <div class="instructions"></div> <!--add text content and clear this when game starts/ends-->
+        <div class="scoreboard">
+            <div class="score-player"></div> <!--Update wins/loss-->
+            <div class="score-computer"></div>
+        </div>
     </main>
     <footer>
         <p>Thank you for playing!</p>
