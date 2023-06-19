@@ -69,6 +69,7 @@ function game() {
         //If W < L, computer wins
         gameStatus.textContent = "The Computer wins the game!"
     }
+    instructions.textContent = 'Click the button above if you would like to play again!'
 }
 //Addeventlistener for buttons
 //Implement getPlayerChoice() function in here
@@ -78,6 +79,7 @@ const startButton = document.querySelector('.play')
 startButton.addEventListener('click', () => {
     //Change game status to game in progress
     gameStatus.textContent = 'Game in progress!'
+    instructions.textContent = 'Pick Rock, Paper, Or Scissors!'
 })
 startButton.addEventListener('click', game)
 
@@ -90,3 +92,4 @@ startButton.addEventListener('click', game)
 
 //Game status declaration
 const gameStatus = document.querySelector('.game-status')
+const instructions = document.querySelector('.instructions')

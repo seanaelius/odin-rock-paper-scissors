@@ -5,6 +5,8 @@ body {
     gap: 30px;
 }
 
+.instructions,
+.game-status,
 .choices {
     display: flex;
     justify-content: space-around;
