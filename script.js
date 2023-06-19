@@ -1,5 +1,6 @@
 //Request name from user
-let name = prompt("What is your name?");
+//let name = prompt("What is your name?");
+const name = 'MASTERCHEFCANADA'
 //Create a function called getComputerChoice
 function getComputerChoice() {
     //Function will randomly return rock, paper, scissors
@@ -50,9 +51,7 @@ function game() {
         //Make playerSelection case-insensitive (Use .toLowerCase())
         playerSelection = playerSelection.toLowerCase()
         //Display Results of the round using console log
-        let round;
-        round = playRound(playerSelection, computerSelection);
-        //Define result variable to record 4th letter of output
+        let round = playRound(playerSelection, computerSelection);
         //If result = W, add one to W counter
         if (round === "W") {
             wins += 1;
@@ -96,8 +95,6 @@ startButton.addEventListener('click', game)
 //ROUND END
 //PLAYER/COMPUTER WINS THE ROUND!
 //SCOREBOARD UPDATE
-//GAME END
-//PLAYER BEATS COMPUTER WITH A SCORE OF 5-X!
 
 //Game status declaration
 const gameStatus = document.querySelector('.game-status')
