@@ -41,7 +41,7 @@ function game() {
     let wins = 0;
     let loss = 0;
     //ROUND COUNTER
-    let roundNumber = 0;
+    let roundNumber = 1;
     //While loop continues game until either wins or losses reaches 5 first
     while (wins < 5 & loss < 5) {
         //Define parameters
@@ -56,16 +56,16 @@ function game() {
         //If result = W, add one to W counter
         if (round === "W") {
             wins += 1;
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
-            roundResults.textContent = `You Win! ${playerSelection} beats ${computerSelection}!`
+            console.log(`You Win! In round ${roundNumber} ${playerSelection} beats ${computerSelection}!`)
+            roundResults.textContent = `You Win! In round ${roundNumber} ${playerSelection} beats ${computerSelection}!`
             //If result = L, add one to L counter
         } else if (round === "L") {
             loss += 1;
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`)
-            roundResults.textContent = `You Lose! ${computerSelection} beats ${playerSelection}!`
+            console.log(`You Lose! In round ${roundNumber} ${computerSelection} beats ${playerSelection}!`)
+            roundResults.textContent = `You Lose! In round ${roundNumber} ${computerSelection} beats ${playerSelection}!`
         } else if (round === "T") {
-            console.log('You Tie with the computer!')
-            roundResults.textContent = 'You Tie with the computer!'
+            console.log(`You Tie with the computer! In round ${roundNumber} ${computerSelection} ties with ${playerSelection}`)
+            roundResults.textContent = `You Tie with the computer! In round ${roundNumber} ${computerSelection} ties with ${playerSelection}`
         }
         //ADD ROUND COUNTER
         roundNumber += 1;
@@ -76,7 +76,7 @@ function game() {
         gameStatus.textContent = `${name} wins the game! ${wins}-${loss}`
     } else if (wins < loss) {
         //If W < L, computer wins
-        gameStatus.textContent = `The Computer wins the game! ${wins}-${loss}`
+        gameStatus.textContent = `The Computer wins the game! ${wins}-${loss}!`
     }
     instructions.textContent = 'Click the button above if you would like to play again!'
 }
