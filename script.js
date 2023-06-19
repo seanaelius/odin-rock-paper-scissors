@@ -22,79 +22,17 @@ function getComputerChoice() {
 //Create a function that plays a single round of rock paper scissors
 //Function should take two parameters - the playerSelection and computerSelection
 function playRound(playerSelection, computerSelection) {
-    //let playerSelection = prompt("What would you like to play this turn? (Rock, Paper, or Scissors)")
-    //Return a string that declares the winner of the round
     //Tie cases (rock and rock, paper and paper, scissors and scissors)
     if (playerSelection === computerSelection) {
-        return "T"
+        console.log("T")
         //Win cases! (rock beats scissors, paper beats rock, scissors beats paper)
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-        return "W"
+        console.log("W")
         //Lose cases! (reverse of win cases)
     } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
-        return "L"
+        console.log("L")
     }
-    //I want to implement a different system to detect a win as opposed to the string slicing
 }
-
-function game() {
-    //Define W/L counters
-    let wins = 0;
-    let loss = 0;
-    //ROUND COUNTER
-    let roundNumber = 1;
-    //While loop continues game until either wins or losses reaches 5 first
-    while (wins < 5 & loss < 5) {
-        //Define parameters
-        const computerSelection = getComputerChoice()
-        let playerSelection = prompt("What would you like to play this turn? Rock, Paper or Scissors?")
-        //Make playerSelection case-insensitive (Use .toLowerCase())
-        playerSelection = playerSelection.toLowerCase()
-        //Display Results of the round using console log
-        let round = playRound(playerSelection, computerSelection);
-        //If result = W, add one to W counter
-        if (round === "W") {
-            wins += 1;
-            console.log(`You Win! In round ${roundNumber} ${playerSelection} beats ${computerSelection}!`)
-            roundResults.textContent = `You Win! In round ${roundNumber} ${playerSelection} beats ${computerSelection}!`
-            //If result = L, add one to L counter
-        } else if (round === "L") {
-            loss += 1;
-            console.log(`You Lose! In round ${roundNumber} ${computerSelection} beats ${playerSelection}!`)
-            roundResults.textContent = `You Lose! In round ${roundNumber} ${computerSelection} beats ${playerSelection}!`
-        } else if (round === "T") {
-            console.log(`You Tie with the computer! In round ${roundNumber} ${computerSelection} ties with ${playerSelection}`)
-            roundResults.textContent = `You Tie with the computer! In round ${roundNumber} ${computerSelection} ties with ${playerSelection}`
-        }
-        //ADD ROUND COUNTER
-        roundNumber += 1;
-    }
-    //At the end compare W and L counters
-    //If W > L, player wins
-    if (wins > loss) {
-        gameStatus.textContent = `${name} wins the game! ${wins}-${loss}`
-    } else if (wins < loss) {
-        //If W < L, computer wins
-        gameStatus.textContent = `The Computer wins the game! ${wins}-${loss}!`
-    }
-    instructions.textContent = 'Click the button above if you would like to play again!'
-}
-//Addeventlistener for buttons
-//Implement getPlayerChoice() function in here
-//Append scoreboard with scoreboard layout and append each score with a value representing their wins
-//PRESS BUTTON
-const startButton = document.querySelector('.play')
-startButton.addEventListener('click', () => {
-    //Change game status to game in progress
-    gameStatus.textContent = 'Game in progress!'
-    instructions.textContent = 'Pick Rock, Paper, Or Scissors!'
-})
-startButton.addEventListener('click', game)
-
-//CHOOSE ROCK, PAPER, OR SCISSORS
-//ROUND END
-//PLAYER/COMPUTER WINS THE ROUND!
-//SCOREBOARD UPDATE
 
 //Game status declaration
 const gameStatus = document.querySelector('.game-status')
@@ -107,3 +45,22 @@ const scissorsButton = document.querySelector('#scissors')
 
 //Round Results Section
 const roundResults = document.querySelector('.round-results')
+
+
+//Event Rock
+rockButton.addEventListener('click', function () {
+    const computerSelection = getComputerChoice()
+    playRound('rock', computerSelection)
+});
+
+//Event Paper
+paperButton.addEventListener('click', function () {
+    const computerSelection = getComputerChoice()
+    playRound('paper', computerSelection)
+})
+
+//Event Scissors
+scissorsButton.addEventListener('click', function () {
+    const computerSelection = getComputerChoice()
+    playRound('scissors', computerSelection)
+})

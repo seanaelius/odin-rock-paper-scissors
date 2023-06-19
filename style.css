@@ -5,14 +5,27 @@ body {
     gap: 30px;
 }
 
-.instructions,
-.game-status,
-.choices,
-.round-results {
+
+.choices {
     display: flex;
     justify-content: space-around;
     border: 2px solid black;
     padding: 30px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player {
+    border: 2px solid blue;
+    padding: 100px;
+}
+
+.computer {
+    border: 2px solid red;
+    padding: 100px;
 }
 
 main {
