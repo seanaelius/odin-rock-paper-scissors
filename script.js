@@ -64,10 +64,10 @@ function game() {
     //At the end compare W and L counters
     //If W > L, player wins
     if (wins > loss) {
-        console.log(`${name} wins the game!`)
+        gameStatus.textContent = `${name} wins the game!`
     } else if (wins < loss) {
         //If W < L, computer wins
-        console.log("The Computer wins the game!")
+        gameStatus.textContent = "The Computer wins the game!"
     }
 }
 //Addeventlistener for buttons
@@ -75,6 +75,10 @@ function game() {
 //Append scoreboard with scoreboard layout and append each score with a value representing their wins
 //PRESS BUTTON
 const startButton = document.querySelector('.play')
+startButton.addEventListener('click', () => {
+    //Change game status to game in progress
+    gameStatus.textContent = 'Game in progress!'
+})
 startButton.addEventListener('click', game)
 
 //CHOOSE ROCK, PAPER, OR SCISSORS
