@@ -53,7 +53,6 @@ function game() {
         console.log(round)
         //Define result variable to record 4th letter of output
         let result = round.slice(4, 5);
-        console.log(result)
         //If result = W, add one to W counter
         if (result === "W") {
             wins += 1;
@@ -65,21 +64,25 @@ function game() {
     //At the end compare W and L counters
     //If W > L, player wins
     if (wins > loss) {
-        return `${name} wins the game!`
+        console.log(`${name} wins the game!`)
     } else if (wins < loss) {
         //If W < L, computer wins
-        return "The Computer wins the game!"
+        console.log("The Computer wins the game!")
     }
-
-    //Addeventlistener for buttons
-    //Implement getPlayerChoice() function in here
-    //Append scoreboard with scoreboard layout and append each score with a value representing their wins
-    //PRESS BUTTON
-    //ROUND START
-    //CHOOSE ROCK, PAPER, OR SCISSORS
-    //ROUND END
-    //PLAYER/COMPUTER WINS THE ROUND!
-    //SCOREBOARD UPDATE
-    //GAME END
-    //PLAYER BEATS COMPUTER WITH A SCORE OF 5-X!
 }
+//Addeventlistener for buttons
+//Implement getPlayerChoice() function in here
+//Append scoreboard with scoreboard layout and append each score with a value representing their wins
+//PRESS BUTTON
+const startButton = document.querySelector('.play')
+startButton.addEventListener('click', game)
+
+//CHOOSE ROCK, PAPER, OR SCISSORS
+//ROUND END
+//PLAYER/COMPUTER WINS THE ROUND!
+//SCOREBOARD UPDATE
+//GAME END
+//PLAYER BEATS COMPUTER WITH A SCORE OF 5-X!
+
+//Game status declaration
+const gameStatus = document.querySelector('.game-status')
