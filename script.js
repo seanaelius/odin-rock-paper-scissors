@@ -34,6 +34,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     //Tie cases (rock and rock, paper and paper, scissors and scissors)
     if (playerSelection === computerSelection) {
+        playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You tie with the Computer! ${playerSelection} does not beat ${computerSelection}.`
         if ((wins == 5) || (loss == 5)) {
             wins = 0;
@@ -45,6 +46,7 @@ function playRound(playerSelection, computerSelection) {
         }
         //Win cases! (rock beats scissors, paper beats rock, scissors beats paper)
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
+        playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You won against the Computer! ${playerSelection} beats ${computerSelection}.`
         wins += 1;
         if (wins < 5) {
@@ -62,6 +64,7 @@ function playRound(playerSelection, computerSelection) {
         }
         //Lose cases! (reverse of win cases)
     } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
+        playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You lost to the Computer! ${playerSelection} loses to ${computerSelection}.`
         loss += 1;
         if (loss < 5) {
