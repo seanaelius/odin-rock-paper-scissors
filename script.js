@@ -34,6 +34,13 @@ function playRound(playerSelection, computerSelection) {
     //Tie cases (rock and rock, paper and paper, scissors and scissors)
     if (playerSelection === computerSelection) {
         console.log("T")
+        if ((wins == 5) || (loss == 5)) {
+            wins = 0;
+            loss = 0;
+            results.textContent = 'Start new game!'
+            playerScore.textContent = `${wins}`
+            computerScore.textContent = `${loss}`
+        }
         //Win cases! (rock beats scissors, paper beats rock, scissors beats paper)
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
         console.log("W")
