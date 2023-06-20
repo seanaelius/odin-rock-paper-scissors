@@ -1,6 +1,15 @@
 //Request name from user
 //let name = prompt("What is your name?");
 const name = 'MASTERCHEFCANADA'
+
+//START COUNTING WINS VS LOSS
+let wins = 0;
+let loss = 0;
+
+const playerScore = document.querySelector('.player')
+const computerScore = document.querySelector('.computer')
+const results = document.querySelector('.results')
+
 //Create a function called getComputerChoice
 function getComputerChoice() {
     //Function will randomly return rock, paper, scissors
@@ -28,9 +37,13 @@ function playRound(playerSelection, computerSelection) {
         //Win cases! (rock beats scissors, paper beats rock, scissors beats paper)
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
         console.log("W")
+        wins += 1;
+        playerScore.textContent = `${wins}`
         //Lose cases! (reverse of win cases)
     } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
         console.log("L")
+        loss += 1;
+        computerScore.textContent = `${loss}`
     }
 }
 
@@ -42,9 +55,6 @@ const instructions = document.querySelector('.instructions')
 const rockButton = document.querySelector('#rock')
 const paperButton = document.querySelector('#paper')
 const scissorsButton = document.querySelector('#scissors')
-
-//Round Results Section
-const roundResults = document.querySelector('.round-results')
 
 
 //Event Rock
