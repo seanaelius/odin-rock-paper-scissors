@@ -38,12 +38,34 @@ function playRound(playerSelection, computerSelection) {
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
         console.log("W")
         wins += 1;
-        playerScore.textContent = `${wins}`
+        if (wins < 5) {
+            playerScore.textContent = `${wins}`
+        } else if (wins == 5) {
+            playerScore.textContent = `${wins}`
+            results.textContent = `${name} wins with a final score of ${wins}-${loss}`
+        } else if (wins > 5) {
+            wins = 0;
+            loss = 0;
+            results.textContent = 'Start new game!'
+            playerScore.textContent = `${wins}`
+            computerScore.textContent = `${loss}`
+        }
         //Lose cases! (reverse of win cases)
     } else if ((playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors")) {
         console.log("L")
         loss += 1;
-        computerScore.textContent = `${loss}`
+        if (loss < 5) {
+            computerScore.textContent = `${loss}`
+        } else if (loss == 5) {
+            computerScore.textContent = `${loss}`
+            results.textContent = `Computer wins with a final score of ${wins}-${loss}`
+        } else if (loss > 5) {
+            wins = 0;
+            loss = 0;
+            results.textContent = 'Start new game!'
+            playerScore.textContent = `${wins}`
+            computerScore.textContent = `${loss}`
+        }
     }
 }
 
