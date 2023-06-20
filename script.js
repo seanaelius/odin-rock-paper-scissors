@@ -1,6 +1,5 @@
 //Request name from user
-//let name = prompt("What is your name?");
-const name = 'MASTERCHEFCANADA'
+let name = prompt("What is your name?");
 
 //START COUNTING WINS VS LOSS
 let wins = 0;
@@ -9,6 +8,7 @@ let loss = 0;
 const playerScore = document.querySelector('.player')
 const computerScore = document.querySelector('.computer')
 const results = document.querySelector('.results')
+results.textContent = `Welcome ${name} to a classic game of rock, paper, scissors! Click an option to start your first game!`
 
 //Create a function called getComputerChoice
 function getComputerChoice() {
@@ -88,18 +88,21 @@ const scissorsButton = document.querySelector('#scissors')
 
 //Event Rock
 rockButton.addEventListener('click', function () {
+    results.textContent = 'Game in progress..'
     const computerSelection = getComputerChoice()
     playRound('rock', computerSelection)
 });
 
 //Event Paper
 paperButton.addEventListener('click', function () {
+    results.textContent = 'Game in progress..'
     const computerSelection = getComputerChoice()
     playRound('paper', computerSelection)
 })
 
 //Event Scissors
 scissorsButton.addEventListener('click', function () {
+    results.textContent = 'Game in progress..'
     const computerSelection = getComputerChoice()
     playRound('scissors', computerSelection)
 })

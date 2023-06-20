@@ -13,6 +13,12 @@ body {
     padding: 30px;
 }
 
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .scoreboard {
     display: flex;
     justify-content: space-evenly;
