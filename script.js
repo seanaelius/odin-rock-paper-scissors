@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You tie with the Computer! ${playerSelection} does not beat ${computerSelection}.`
-        if ((wins == 5) || (loss == 5)) {
+        if ((wins >= 5) || (loss >= 5)) {
             wins = 0;
             loss = 0;
             gameProgress.textContent = 'Start new game!'
@@ -49,12 +49,12 @@ function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You won against the Computer! ${playerSelection} beats ${computerSelection}.`
         wins += 1;
-        if (wins < 5) {
+        if ((wins < 5) & (loss < 5)) {
             playerScore.textContent = `${wins}`
         } else if (wins == 5) {
             playerScore.textContent = `${wins}`
             gameProgress.textContent = `${name} wins with a final score of ${wins}-${loss}`
-        } else if (wins > 5) {
+        } else if ((wins >= 5) || (loss >= 5)) {
             wins = 0;
             loss = 0;
             gameProgress.textContent = 'Start new game!'
@@ -67,12 +67,12 @@ function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         results.textContent = `You lost to the Computer! ${playerSelection} loses to ${computerSelection}.`
         loss += 1;
-        if (loss < 5) {
+        if ((wins < 5) & (loss < 5)) {
             computerScore.textContent = `${loss}`
         } else if (loss == 5) {
             computerScore.textContent = `${loss}`
             gameProgress.textContent = `Computer wins with a final score of ${wins}-${loss}`
-        } else if (loss > 5) {
+        } else if ((loss >= 5) || (wins >= 5)) {
             wins = 0;
             loss = 0;
             gameProgress.textContent = 'Start new game!'
