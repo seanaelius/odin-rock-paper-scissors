@@ -1,8 +1,10 @@
 body {
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
+    background-color: rgb(216, 216, 216);
 }
 
 
@@ -27,14 +29,24 @@ body {
     justify-content: space-evenly;
 }
 
+
+.player,
+.computer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 100px 0px;
+    font-size: 50px;
+}
+
 .player {
     border: 2px solid blue;
-    padding: 100px;
+    background-color: rgb(150, 150, 244);
 }
 
 .computer {
     border: 2px solid red;
-    padding: 100px;
+    background-color: rgb(233, 158, 158);
 }
 
 main {
@@ -48,4 +60,12 @@ header,
 footer {
     display: flex;
     justify-content: center;
+}
+
+#rock,
+#paper,
+#scissors {
+    flex-grow: 1;
+    padding: 30px 0px;
+    font-size: 30px;
 }
