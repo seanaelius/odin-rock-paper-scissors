@@ -1,5 +1,17 @@
-//Request name from user
-let name = prompt("What is your name?");
+let names = ["player 1",]
+
+//Event Name
+const nameButton = document.querySelector('#name')
+nameButton.addEventListener('click', function () {
+    newName = prompt("What is your name?")
+    names.push(`${newName}`)
+    gameProgress.textContent = 'You changed your name! Press Start to start a new game!'
+    results.textContent = ''
+    wins = 0;
+    loss = 0;
+    playerScore.textContent = `${wins}`
+    computerScore.textContent = `${loss}`
+});
 
 //START COUNTING WINS VS LOSS
 let wins = 0;
@@ -9,7 +21,6 @@ const playerScore = document.querySelector('.player')
 const computerScore = document.querySelector('.computer')
 const results = document.querySelector('.results')
 const gameProgress = document.querySelector('.game-progress')
-gameProgress.textContent = `Welcome ${name} to a classic game of rock, paper, scissors! Click an option to start your first game!`
 
 //Create a function called getComputerChoice
 function getComputerChoice() {
@@ -32,6 +43,7 @@ function getComputerChoice() {
 //Create a function that plays a single round of rock paper scissors
 //Function should take two parameters - the playerSelection and computerSelection
 function playRound(playerSelection, computerSelection) {
+    let name = names.slice(-1)
     //Tie cases (rock and rock, paper and paper, scissors and scissors)
     if (playerSelection === computerSelection) {
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
@@ -91,6 +103,26 @@ const instructions = document.querySelector('.instructions')
 const rockButton = document.querySelector('#rock')
 const paperButton = document.querySelector('#paper')
 const scissorsButton = document.querySelector('#scissors')
+
+//Declare Start and Reset Buttons
+const startButton = document.querySelector('#start')
+const resetButton = document.querySelector('#reset')
+
+//Event Start
+startButton.addEventListener('click', function () {
+    let name = names.slice(-1)
+    gameProgress.textContent = `Welcome ${name} to a classic game of rock, paper, scissors! Click an option to start your first game!`
+});
+
+//Event Reset
+resetButton.addEventListener('click', function () {
+    gameProgress.textContent = 'You reset the game! Press Start to start a new game!'
+    results.textContent = ''
+    wins = 0;
+    loss = 0;
+    playerScore.textContent = `${wins}`
+    computerScore.textContent = `${loss}`
+});
 
 
 //Event Rock
