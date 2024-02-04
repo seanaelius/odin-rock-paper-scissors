@@ -4,9 +4,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    background-color: rgb(216, 216, 216);
+    background-color: #94a3b8;
+    margin: 0px;
 }
 
+header {
+    background-color: #64748b;
+    margin: 0px;
+}
 
 .choices {
     display: flex;
@@ -21,8 +26,10 @@ body {
     justify-content: center;
     align-items: center;
     border: 2px solid black;
-    padding: 20px;
+    padding: 10px 10vw;
     text-align: center;
+    height: 5vh;
+    width: 80vw;
 }
 
 .scoreboard {
@@ -42,12 +49,12 @@ body {
 
 .player {
     border: 2px solid blue;
-    background-color: rgb(150, 150, 244);
+    background-color: #38bdf8;
 }
 
 .computer {
     border: 2px solid red;
-    background-color: rgb(233, 158, 158);
+    background-color: #ef4444;
 }
 
 main {

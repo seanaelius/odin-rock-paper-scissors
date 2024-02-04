@@ -1,4 +1,4 @@
-let names = ["player 1",]
+let names = ["Player 1",]
 
 //Event Name
 const nameButton = document.querySelector('#name')
@@ -111,7 +111,7 @@ const resetButton = document.querySelector('#reset')
 //Event Start
 startButton.addEventListener('click', function () {
     let name = names.slice(-1)
-    gameProgress.textContent = `Welcome ${name} to a classic game of rock, paper, scissors! Click an option to start your first game!`
+    gameProgress.textContent = `Welcome ${name} to a classic game of Rock, Paper, Scissors! Click an option to start your first game!`
 });
 
 //Event Reset
